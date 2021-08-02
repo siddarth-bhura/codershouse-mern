@@ -1,0 +1,17 @@
+POST http://localhost:8000/api/send-otp HTTP/1.1
+Content-Type: application/json
+
+{
+    "phone": "4568791328"
+    
+}
+
+###
+POST http://localhost:8000/api/verify-otp HTTP/1.1
+Content-Type: application/json
+
+{
+    "phone": "456879132",
+    "otp": 1111,
+    "hash":
+}

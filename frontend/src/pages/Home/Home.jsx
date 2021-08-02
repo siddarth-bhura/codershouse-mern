@@ -6,17 +6,11 @@ import Button from '../../components/shared/Button/Button'
 
 const Home = () => {
 
-  const signInLink = {
-    color: '#0077ff',
-    fontWeight: 'bold',
-    textDecoration: 'none',
-    marginLeft: '10px'
-  };
-
+  
   const history = useHistory();
   
   function startRegister(){
-    history.push('/register');
+    history.push('/authenticate');
   }
 
     return (
@@ -27,10 +21,10 @@ const Home = () => {
                we wrap up the finishing project touches, we're adding people gradually
                 to make sure nothing breaks
            </p>
-         <Button onClick={startRegister} text="Get your username" icon="arrow-forward"></Button>
+         <Button onClick={startRegister} text="Let's Go" icon="arrow-forward"></Button>
            <div className={styles.signinWrapper}>
                <span className={styles.hasInvite}>Have an invite text?</span>
-               <Link to ="/login" style={signInLink}>Sign In</Link>
+               
            </div>
              </Card>
        </div>
