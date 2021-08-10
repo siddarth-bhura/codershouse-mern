@@ -15,6 +15,7 @@ function Phone({onNext}) {
     async function submit(){
         //Request Server
         const {data} = await sendOtp({phone: phoneNumber});
+        console.log(data);
         dispatch(setOtp({phone: data.phone, hash: data.hash}));
         onNext();
     }

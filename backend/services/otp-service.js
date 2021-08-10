@@ -15,8 +15,10 @@ class OtpService{
     }
 
 async sendBySms(phone,otp) {
+    // This was my mistake I didn't added the country code
+    console.log(`+91${phone}`);
     return await twilio.messages.create({
-        to: phone,
+        to: `+91${phone}`,
         from: process.env.TWILIO_SMS_FROM_NUMBER,
         body: `Your codershouse OTP is ${otp}`,
     });

@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Home.module.css'
-import {Link,useHistory} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 import Card from '../../components/shared/Card/Card'
 import Button from '../../components/shared/Button/Button'
 
