@@ -6,11 +6,21 @@ import Authenticate from './pages/Authenticate/Authenticate.jsx';
 import Activate from './pages/Activate/Activate.jsx';
 import Rooms from './pages/Rooms/Rooms.jsx'
 import {useSelector} from 'react-redux'
+import { useLoadingWithRefresh } from './hooks/useLoadingWithRefresh.js';
+import Loader from './components/shared/Loader/Loader.jsx';
 
 
 
 function App() {
-  return <BrowserRouter>
+
+  //Created a custom hook
+  const {loading} = useLoadingWithRefresh();
+  
+  return ( 
+    loading ?  (
+      <Loader message=" Loading, please wait..." />
+    ) : (
+    <BrowserRouter>
   <Navigation/>
     <Switch>
       <GuestRoute path="/" exact><Home/></GuestRoute>
@@ -19,6 +29,8 @@ function App() {
       <ProtectedRoute path="/rooms"><Rooms/></ProtectedRoute>
     </Switch>
   </BrowserRouter>
+  )
+  )
 }
 
 const GuestRoute = ({children,...rest}) => {
